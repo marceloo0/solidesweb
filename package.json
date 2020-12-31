@@ -1,0 +1,81 @@
+{
+  "name": "solides_web",
+  "author": "@marceloppb",
+  "license": "MIT",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc --pretty --noEmit",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext ts --ext tsx --ext js",
+    "test": "jest",
+    "test-all": "yarn lint && yarn type-check && yarn test",
+    "coverage": "jest --coverage"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run type-check"
+    }
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn lint",
+      "yarn format"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/pages/**/*.tsx",
+      "src/components/**/*.tsx"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "cookie": "^0.4.1",
+    "date-fns": "^2.16.1",
+    "formik": "^2.2.6",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.3",
+    "next": "latest",
+    "react": "^16.13.1",
+    "react-day-picker": "^7.4.8",
+    "react-dom": "^16.13.1",
+    "swr": "^0.3.11",
+    "yup": "^0.32.8"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@testing-library/react": "^10.0.1",
+    "@types/cookie": "^0.4.0",
+    "@types/jest": "^25.1.4",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/node": "^13.9.5",
+    "@types/react": "^16.9.27",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "autoprefixer": "^10.1.0",
+    "babel-jest": "^25.2.3",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "husky": "^4.2.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.2.3",
+    "jest-watch-typeahead": "^0.5.0",
+    "lint-staged": "^10.0.10",
+    "postcss": "^8.2.1",
+    "prettier": "^2.0.2",
+    "tailwindcss": "^2.0.2",
+    "typescript": "^3.8.3"
+  }
+}
